@@ -126,7 +126,7 @@ def mutation(population):
 
 #遺伝子情報の表示
 def summary(i, population):
-    print('----------------------- GENERATION ' + str(i+1) + '--------------------------')
+    print('----------------------- GENERATION ' + str(i+1) + ' -------------------------')
     print('            GTYPE', '             PTYPE', 'FITNESS', 'RANK', 'PAIR', sep='   ')
     for individual in population:
         print(individual.gtype, individual.ptype, individual.fitness, individual.rank,individual.pair, sep='     ')
