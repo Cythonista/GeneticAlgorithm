@@ -126,10 +126,22 @@ def mutation(population):
 
 #遺伝子情報の表示
 def summary(i, population):
+    max = 0
+    min = 99
+    average = 0
     print('----------------------- GENERATION ' + str(i+1) + ' -------------------------')
     print('            GTYPE', '             PTYPE', 'FITNESS', 'RANK', 'PAIR', sep='   ')
     for individual in population:
         print(individual.gtype, individual.ptype, individual.fitness, individual.rank,individual.pair, sep='     ')
+        average += individual.fitness
+        if(max <= individual.fitness):
+            max = individual.fitness
+        else:
+            min = individual.fitness
+    average /= POPULATION_SIZE
+    average = round(average, 2)
+    print('FITNESS AAVERAGE: ' + str(average) + ' MAX:' + str(max) + ' MIN:' + str(min))
+
 
 def main():
     population = [] #母集団
